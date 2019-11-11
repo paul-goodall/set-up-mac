@@ -1,1 +1,4 @@
-# Empty for now
+alias conda-on='source conda-on.sh'
+alias conda-off='source conda-off.sh'
+
+alias ll='ls -lahG'

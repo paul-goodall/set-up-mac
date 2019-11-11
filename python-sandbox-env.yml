@@ -1,4 +1,7 @@
 name: python-sandbox
+channels:
+  - defaults
+  - conda-forge
 dependencies:
   - python
   - ipykernel
@@ -6,5 +9,7 @@ dependencies:
   - pandas
   - matplotlib
   - scikit-learn
-  #- tensorflow=2.0.0-alpha
   - pip
+  - pip:
+    - tensorflow
+    - pysnooper

@@ -70,6 +70,10 @@ brew install wget
 brew install jq
 brew install rsync
 
+# Python (Homebrew version)
+brew install python
+pip install --upgrade pip
+
 # Dev tools
 brew install git
 brew install bash-git-prompt
@@ -117,9 +121,6 @@ echo "  $ ln -sf /Library/Frameworks/R.framework/Versions/Current/Resources/lib/
 # https://mran.microsoft.com/documents/rro/installation#revorinst-osx
 # Uncomment when/if decide want it installed too
 # brew cask install microsoft-r-open
-
-# Python (Homebrew version)
-brew install python
 
 # Node.js (required for JupyterLab extensions)
 brew install node
@@ -182,10 +183,6 @@ conda install --name base --yes nb_conda_kernels
 # Sandbox Python environment
 wget https://raw.githubusercontent.com/jarvisrob/set-up-mac/master/python-sandbox-env.yml -P ~/tmp
 conda env create --file ~/tmp/python-sandbox-env.yml
-conda activate python-sandbox
-# TensorFlow 2 not yet available via conda or conda-forge
-pip install tensorflow==2.0.0-alpha0
-pip install pysnooper
 conda activate base
 rm ~/tmp/python-sandbox-env.yml
 

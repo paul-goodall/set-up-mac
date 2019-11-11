@@ -62,16 +62,19 @@ chsh -s /usr/local/bin/bash
 
 # Terminal tools and commands
 brew cask install iterm2
+brew cask install hyper  # need to decide on which terminal to use, go with both for now
 brew install bash-completion
 brew install tmux
 brew install tree
 brew install wget
+brew install jq
 brew install rsync
 
 # Dev tools
 brew install git
 brew install bash-git-prompt
 brew cask install docker
+brew cask install powershell
 
 # Productivity
 brew cask install microsoft-teams
@@ -79,6 +82,9 @@ brew cask install alfred
 brew cask install google-chrome
 brew cask install firefox
 brew cask install dropbox
+brew cask install cisco-proximity
+brew cask install webex-teams
+brew cask install balenaetcher
 
 # R
 

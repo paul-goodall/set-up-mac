@@ -93,7 +93,7 @@ echo "Installing XQuartz. You will be prompted for root password."
 brew cask install xquartz
 
 # R.app is the macOS version of CRAN-R
-brew cask install r-app
+brew cask install r
 
 # Linking the BLAS (vecLib) from Apple's Accelerate Framework to make R run multi-threaded where it can by default
 # https://developer.apple.com/documentation/accelerate/blas

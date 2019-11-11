@@ -8,7 +8,13 @@ dependencies:
   - numpy
   - pandas
   - matplotlib
+  - seaborn
+  - statsmodels
+  - pandas-profiling
   - scikit-learn
+  - pymc3
+  - requests
+  - beautiful-soup
   - pip
   - pip:
     - tensorflow

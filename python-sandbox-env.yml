@@ -14,7 +14,7 @@ dependencies:
   - scikit-learn
   - pymc3
   - requests
-  - beautiful-soup
+  - beautifulsoup4
   - pip
   - pip:
     - tensorflow

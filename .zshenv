@@ -1,14 +1,7 @@
-if [ -r ~/.profile ]
-then
-	source ~/.profile
-fi
+# Zsh dot files
+# http://zsh.sourceforge.net/Intro/intro_3.html
 
-
-# Zsh-specific stuff
-
-# Setting up PATH env variable
-# https://stackoverflow.com/questions/11530090/adding-a-new-entry-to-the-path-variable-in-zsh/18077919#18077919
-# Append
-path=('/usr/local/opt/python/libexec/bin' $path)
-# Prepend
-path+='~/bin'
+# I use .zprofile because changes to the PATH env variable seem to:
+#   - NOT work properly when done in .zshenv. All additions appear to be *appended only*, with prepending not working
+#   - Work when done in .zprofile, both prepending and appending doing what you'd expect
+# Potentially this is something to do with the peculiarities of MacOS

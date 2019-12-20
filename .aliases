@@ -1,4 +1,3 @@
-alias conda-on='source conda-on.sh'
-alias conda-off='source conda-off.sh'
-
+# Aliases that can be used in all shells
+# Bash/Zsh/other specific aliases aren't here, they are in their .*rc files
 alias ll='ls -lahG'

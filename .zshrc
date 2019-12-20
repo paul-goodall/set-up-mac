@@ -108,3 +108,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.aliases
+alias condaon='source conda-on-zsh.sh'
+alias condaoff='source conda-off-zsh.sh'

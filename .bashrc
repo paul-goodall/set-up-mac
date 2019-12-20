@@ -1,5 +1,3 @@
-source ~/.aliases
-
 # bash-completion
 # https://salsa.debian.org/debian/bash-completion
 # As per Homebrew recommendation
@@ -13,3 +11,7 @@ if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
 	GIT_PROMPT_THEME=Custom
 	source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
 fi
+
+source ~/.aliases
+alias condaon='source conda-on-bash.sh'
+alias condaoff='source conda-off-bash.sh'

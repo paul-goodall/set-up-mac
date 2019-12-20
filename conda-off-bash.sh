@@ -1,4 +1,3 @@
-
 CONDA_PATHS="$CONDA_PREFIX/bin:$CONDA_PREFIX/condabin"
 
 # deactivate environment, i.e. activate base

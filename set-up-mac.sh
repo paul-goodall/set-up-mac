@@ -169,9 +169,14 @@ rm ~/tmp/Miniconda3-latest-MacOSX-x86_64.sh
 
 # Conda adds content to .bash_profile, but we want to manually call that when turning Conda on
 # So put all that stuff into another script, and we'll get .bash_profile later
-mv ~/.bash_profile ~/bin/conda-on.sh
-echo "echo \"Conda ready to use\"" >> ~/bin/conda-on.sh
-source ~/bin/conda-on.sh
+mv ~/.bash_profile ~/bin/conda-on-bash.sh
+echo "echo \"Conda ready to use\"" >> ~/bin/conda-on-bash.sh
+
+# Since we're also using Zsh, we want a version of this script works in Zsh
+sed 's/bash/zsh/' ~/bin/conda-on-bash.sh > ~/bin/conda-on-zsh.sh
+
+# Turn on Conda to configure and to install some stuff
+source ~/bin/conda-on-bash.sh
 
 conda update conda
 conda --version
@@ -205,8 +210,9 @@ echo "List of conda environments now on your system"
 conda info --envs
 
 # Turn off conda
-wget https://raw.githubusercontent.com/jarvisrob/set-up-mac/master/conda-off.sh -P ~/bin 
-source ~/bin/conda-off.sh
+wget https://raw.githubusercontent.com/jarvisrob/set-up-mac/master/conda-off-bash.sh -P ~/bin
+wget https://raw.githubusercontent.com/jarvisrob/set-up-mac/master/conda-off-zsh.sh -P ~/bin
+source ~/bin/conda-off-bash.sh
 
 
 # Configure Git

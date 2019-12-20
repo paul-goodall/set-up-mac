@@ -57,11 +57,17 @@ echo 'You will be prompted for root password to add the new version of bash to /
 brew install bash
 echo '/usr/local/bin/bash' | sudo tee -a /etc/shells 1>/dev/null
 
+# Zsh
+echo 'Installing the latest version of Zsh'
+echo 'You will be prompted for root password to add the new version of bash to /etc/shells'
+brew install zsh
+echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells 1>/dev/null
 
 # Terminal tools and commands
 brew cask install iterm2
 brew cask install hyper  # need to decide on which terminal to use, go with both for now
 brew install bash-completion
+brew install zsh-completions
 brew install tmux
 brew install tree
 brew install wget
@@ -230,6 +236,25 @@ git config --global alias.ds 'diff --staged'
 echo "... Done"
 
 
+# Fonts
+brew tap homebrew/cask-fonts
+brew cask install font-meslo-nerd-font
+
+
+# Oh My Zsh
+echo 'Installing Oh My Zsh'
+wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -P ~/tmp/ohmyzsh
+sh ~/tmp/ohmyzsh/install.sh --unattended
+# --unattended: sets both CHSH and RUNZSH to 'no
+#   CHSH    - 'no' means the installer will not change the default shell (default: yes)
+#   RUNZSH  - 'no' means the installer will not run zsh after the install (default: yes)
+# See the comments for the script itself at: https://github.com/robbyrussell/oh-my-zsh/blob/master/tools/install.sh
+# Basically, you want to use this argument when installing from a script where you also install other things
+# We'll change the default shell to Zsh later and we don't want to launch a new shell straight away--
+# we want to keep doing other stuff
+rm -rf ~/tmp/ohmyzsh
+
+
 # macOS settings
 echo "macOS settings being configured"
 
@@ -327,6 +352,8 @@ defaults write com.irradiatedsoftware.SizeUp StartAtLogin -bool true
 # References:
 #   - https://www.davidculley.com/dotfiles/
 #   - https://superuser.com/questions/183870/difference-between-bashrc-and-bash-profile/183980#183980
+#   - https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc
+#   - http://zsh.sourceforge.net/Intro/intro_3.html
 
 echo "Download dot files"
 
@@ -345,21 +372,25 @@ echo "Downloading .bash_profile"
 wget https://raw.githubusercontent.com/jarvisrob/set-up-mac/master/.bash_profile -P ~
 cat ~/.bash_profile
 
-# Z Shell
-# cat <<EOT > ~/.zprofile
-# [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 # .bashrc
 echo "Downloading .bashrc"
 wget https://raw.githubusercontent.com/jarvisrob/set-up-mac/master/.bashrc -P ~
 cat ~/.bashrc
 
-# EOT
+# .zshenv
+echo "Downloading .zshenv"
+wget https://raw.githubusercontent.com/jarvisrob/set-up-mac/master/.zshenv -P ~
+cat ~/.zshenv
 
-# cat <<EOT > ~/.zshrc
-# source .aliases
+# .zprofile
+echo "Downloading .zprofile"
+wget https://raw.githubusercontent.com/jarvisrob/set-up-mac/master/.zprofile -P ~
+cat ~/.zshenv
 
-# EOT
-# cat ~/.zprofile
+# .zshrc
+echo "Downloading .zshrc"
+wget https://raw.githubusercontent.com/jarvisrob/set-up-mac/master/.zshrc -P ~
+cat ~/.zshrc
 
 # .vimrc (Vim)
 echo "Downloading .vimrc"
@@ -375,6 +406,11 @@ cat ~/.condarc
 echo "Downloading .git-prompt-colors.sh"
 wget https://raw.githubusercontent.com/jarvisrob/set-up-mac/master/.git-prompt-colors.sh -P ~
 cat ~/.git-prompt-colors.sh
+
+
+# Make Zsh the default shell
+echo 'Making Zsh the default shell. You will be prompted for root password.'
+chsh -s /usr/local/bin/zsh
 
 
 # End

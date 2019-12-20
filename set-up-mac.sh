@@ -52,13 +52,11 @@ echo "Done ..."
 echo "Installing packages and software using Homebrew ..."
 
 # Bash
-echo "First, the latest version of bash"
+echo 'Installing the latest version of bash'
+echo 'You will be prompted for root password to add the new version of bash to /etc/shells'
 brew install bash
-echo "You will now be prompted for root password *twice*"
-echo "First time to add the new version of bash to /etc/shells"
-sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
-echo "Second time to change the default shell to the new version of bash"
-chsh -s /usr/local/bin/bash
+echo '/usr/local/bin/bash' | sudo tee -a /etc/shells 1>/dev/null
+
 
 # Terminal tools and commands
 brew cask install iterm2
@@ -342,11 +340,6 @@ echo "Downloading .profile"
 wget https://raw.githubusercontent.com/jarvisrob/set-up-mac/master/.profile -P ~
 cat ~/.profile
 
-# .bashrc
-echo "Downloading .bashrc"
-wget https://raw.githubusercontent.com/jarvisrob/set-up-mac/master/.bashrc -P ~
-cat ~/.bashrc
-
 # .bash_profile
 echo "Downloading .bash_profile"
 wget https://raw.githubusercontent.com/jarvisrob/set-up-mac/master/.bash_profile -P ~
@@ -355,6 +348,10 @@ cat ~/.bash_profile
 # Z Shell
 # cat <<EOT > ~/.zprofile
 # [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
+# .bashrc
+echo "Downloading .bashrc"
+wget https://raw.githubusercontent.com/jarvisrob/set-up-mac/master/.bashrc -P ~
+cat ~/.bashrc
 
 # EOT
 

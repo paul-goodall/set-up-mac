@@ -64,8 +64,6 @@ brew install zsh
 echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells 1>/dev/null
 
 # Terminal tools and commands
-brew cask install iterm2
-brew cask install hyper  # need to decide on which terminal to use, go with both for now
 brew install bash-completion
 brew install zsh-completions
 brew install tmux
@@ -73,6 +71,10 @@ brew install tree
 brew install wget
 brew install jq
 brew install rsync
+
+# Terminals (need to decide on which terminal to use, go with both for now)
+brew cask install iterm2
+brew cask install hyper
 
 # Python (Homebrew version)
 brew install python

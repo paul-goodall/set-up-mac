@@ -394,7 +394,7 @@ cat ~/.zshenv
 # .zprofile
 echo "Downloading .zprofile"
 wget https://raw.githubusercontent.com/jarvisrob/set-up-mac/master/.zprofile -P ~
-cat ~/.zshenv
+cat ~/.zprofile
 
 # .zshrc
 echo "Downloading .zshrc"

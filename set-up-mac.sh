@@ -84,6 +84,7 @@ pip install --upgrade pip
 brew install git
 brew install bash-git-prompt
 brew cask install docker
+echo "Installing PowerShell Core. You will be prompted for root password."
 brew cask install powershell
 
 # Productivity
